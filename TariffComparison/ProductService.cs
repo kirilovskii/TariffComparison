@@ -19,21 +19,6 @@ namespace TariffComparison
             _context = context;
         }
 
-        //public async IAsyncEnumerable<ProductCosts> CalculateCostsAsync1(
-        //    int consumption, [EnumeratorCancellation] CancellationToken cancellationToken)
-        //{
-        //    await foreach (Product product in _context.Products.AsNoTracking().AsAsyncEnumerable())
-        //    {
-        //        if (_mapper.TryMap(product, out ProductBase? productBase))
-        //        {
-        //            yield return new ProductCosts
-        //            {
-        //                TariffName = product.Name,
-        //                AnnualCosts = productBase!.GetAnnualCost(consumption)
-        //            };
-        //        }
-        //    }
-        //}
         public async Task<IEnumerable<ProductCosts>> CalculateCostsAsync(
             int consumption, CancellationToken cancellationToken)
         {
